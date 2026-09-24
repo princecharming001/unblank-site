@@ -1,5 +1,5 @@
 /* Blank. website
-   Tokens mirror docs/BUILD_SPEC.md §7 (light / dark). One family, one accent (the AI badge),
+   Tokens mirror docs/BUILD_SPEC.md §7 (light / dark). One family, no accent color,
    black stadium buttons, white r16 cards on a soft grey page. */
 
 /* ── Tokens ─────────────────────────────────────────────────────────────── */
@@ -17,8 +17,6 @@
   --on-cta: #F1F3F4;         /* text on cta = page color */
   --hero-from: #0B080B;
   --hero-to: #2F2F2F;
-  --ai-from: #A689AE;
-  --ai-to: #8D8BB5;
   --neg: #C9534A;
   --neg-ink: #B0433B;        /* neg is 4.36:1 on white; error text uses this AA step (5.66:1) */
   --neg-soft: #EAC4C1;
@@ -321,8 +319,9 @@ svg {
   transform: none;
 }
 
-/* App Store badge: plain text, no Apple artwork. The <a> has no href until the listing is
-   live (and says "Coming soon"); adding href and "Download on the" turns on the link styles. */
+/* App Store badge: plain text, no Apple artwork. The <a> has no href until the listing is live
+   (and says "Coming soon"); on release day add href="https://apps.apple.com/app/id6815487245" and
+   "Download on the", which turns on the link styles. */
 .store {
   display: inline-flex;
   flex-direction: column;
@@ -670,14 +669,6 @@ svg {
   font-weight: 700;
 }
 
-.ai-dot {
-  flex: none;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--ai-from), var(--ai-to));
-}
-
 .scene__setting {
   margin-top: 8px;
   font-size: 0.875rem;
@@ -761,6 +752,43 @@ svg {
   margin-top: 6px;
   font-size: 0.9375rem;
   font-weight: 600;
+}
+
+/* ── Landing: beyond the daily ──────────────────────────────────────────── */
+.more {
+  padding-block: 64px 8px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.feature {
+  padding: 22px 22px 24px;
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+
+.feature__title {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.feature__body {
+  margin-top: 8px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+
+@media (min-width: 960px) {
+  .features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
 }
 
 /* ── Landing: footnote ──────────────────────────────────────────────────── */
