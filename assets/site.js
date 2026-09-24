@@ -1,4 +1,4 @@
-/* unblank. website: support form and FAQ deep links. No cookies, no storage, no trackers. */
+/* Blank. website: support form and FAQ deep links. No cookies, no storage, no trackers. */
 (function () {
   'use strict';
 
